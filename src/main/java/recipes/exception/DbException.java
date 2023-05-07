@@ -1,4 +1,4 @@
-package src.recipes.exception;
+package recipes.exception;
 
 public class DbException extends RuntimeException{
     public DbException() {

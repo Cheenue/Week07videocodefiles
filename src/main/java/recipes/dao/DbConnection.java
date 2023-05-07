@@ -1,6 +1,6 @@
-package src.recipes.dao;
+package recipes.dao;
 
-import src.recipes.exception.DbException;
+import recipes.exception.DbException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,10 +13,8 @@ public class DbConnection {
     private static final String HOST = "localhost";
     private static final int PORT = 3306;
 
-    public static Connection getConnection() {
-        String url = String.format("jdbc:mysql://%s:%d/%s?user=%s&password%s&useSSL=false", HOST, PORT, SCHEMA, USER, PASSWORD);
-
-        System.out.println("Connecting with url=" + url);
+    public static java.sql.Connection getConnection() {
+        String url = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s&useSSL=false", HOST, PORT, SCHEMA, USER, PASSWORD);
 
         try {
             Connection conn = DriverManager.getConnection(url);
